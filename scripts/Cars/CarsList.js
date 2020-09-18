@@ -1,6 +1,6 @@
 import { useCars, getCars } from "./ColorsProvider.js";
 
-const contentTarget = document.querySelector(".mainContainer");
+const contentTarget = document.querySelector(".carsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
 
 eventHub.addEventListener("carStateChanged", event => {

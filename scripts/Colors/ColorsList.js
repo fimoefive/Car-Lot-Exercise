@@ -1,6 +1,6 @@
 import { useColors, getAvalibleColors } from "./ColorsProvider.js";
 
-const contentTarget = document.querySelector(".mainContainer");
+const contentTarget = document.querySelector(".colorsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
 
 eventHub.addEventListener("colorStateChanged", event => {
