@@ -1,11 +1,11 @@
-import { CarSelect} from "./Cars/CarsList.js";
+import { CarList} from "./Cars/CarsList.js";
 import { getCars, useCars } from "./Cars/CarsProvider.js";
-import { ColorSelect } from "./Colors/ColorsList.js";
+import { ColorList } from "./Colors/ColorsList.js";
 import { getAvailableColors, useColors } from "./Colors/ColorsProvider.js";
 
 
-CarSelect();
-ColorSelect();
+CarList();
+ColorList();
 getCars();
 useCars();
 getAvailableColors();

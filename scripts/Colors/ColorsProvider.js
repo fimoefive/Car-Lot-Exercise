@@ -11,7 +11,7 @@ export const useColors = () => {
 
 export const getAvailableColors = () => {
   // TODO
-    return fetch("https://gist.githubusercontent.com/AdamSheaffer/242f907515474ab081b5a49971bd51f4/raw/fb61fc45a3676a67f7fb5634b987a8f7393b453c/colors.json")
+    return fetch(availableColorsURL)
       .then(response => response.json())
       .then(parsedAvailableColors => {
         availableColors = parsedAvailableColors

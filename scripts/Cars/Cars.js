@@ -1,6 +1,8 @@
-export const carName = (carObj) =>{
+export const carHTML = (carObj) =>{
     return ` 
-    <section id="car-card${carObj.id}" class="car-card">
-    <h2>${carObj.carName}</h2>
+    <section class="car-card">
+    <h2>Name:${carObj.carName}</h2>
+    <p>Year: ${carObj.year}</p>
+    </section>
     ` 
 };

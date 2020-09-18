@@ -1,35 +1,22 @@
 import { useColors, getAvailableColors } from "./ColorsProvider.js";
+import { colorName } from "./Colors.js";
 
-const contentTarget = document.querySelector(".colorsDrop");
+
 const eventHub = document.querySelector(".dropdownContainer");
+const contentTarget = document.querySelector(".colorsDrop");
 
-eventHub.addEventListener("colorSelect", event => {
-    if (event.target.id === "colorSelect") {
-        const customEvent = new CustomEvent  ("colorSelected", {
+eventHub.addEventListener("change", event => {
+if (event.target.id === "colorSelect") {
+    const CustomEvent = new CustomEvent("colorChosen", {
         detail: {
-            chosenColor: event.target.value
-            } 
-        })
-         eventHub.dispatchEvent(customEvent)
-         colorsPreview(customEvent)
-    }
+            colorChosen: event.target.value
+        }
+    });
+    eventHub.dispatchEvent(CustomEvent);
+}
 });
 
-
-const render = (colorList) => {
-    contentTarget.innerHTML = `
-       <select class="colorsDrop" id="colorSelect">
-       <option value="0">Select a Color</option> 
-       ${colorList.map(colorObj => {
-            return `<option value="${colorObj.colorName}">${colorObj.colorName}</option>`
-       }).join("")
-    }
-    </select>   
-    `
-};
-
-
-export const ColorSelect = () => {
+export const ColorList = () => {
     getAvailableColors()
     .then(() => {
         const colorList = useColors()
@@ -37,8 +24,46 @@ export const ColorSelect = () => {
     })
 };
 
-const colorsPreview = (event) => {
-    const colorsContentTarget = document.querySelector(".ColorsPreview");
-
-    colorsContentTarget.innerHTML = event.detail.chosenColor
+const render = colorArray => {
+    contentTarget.innerHTML = `
+    <select class="dropdown" id="colorSelect">
+        <option value="0">Please select a color ...</option>
+        ${theColorsArray
+          .map(colorObj => {
+            return `<option value="${colorObj.id}">${colorObj.color}</option>`;
+          })
+          .join("")}
+    </select>
+    `
 };
+
+// eventHub.addEventListener("colorSelect", event => {
+//     if (event.target.id === "colorSelect") {
+//         const customEvent = new CustomEvent  ("colorSelected", {
+//         detail: {
+//             chosenColor: event.target.value
+//             } 
+//         })
+//          eventHub.dispatchEvent(customEvent)
+//          colorsPreview(customEvent)
+//     }
+// });
+
+
+
+// const render = (colorList) => {
+   
+//     let HTMLArray = colorList.map(singleColor => {
+//             return colorName(singleColor);
+//        })
+//        contentTarget.innerHTML= HTMLArray.join("")
+// };
+
+
+
+
+// const colorsPreview = (event) => {
+//     const colorsContentTarget = document.querySelector(".ColorsPreview");
+
+//     colorsContentTarget.innerHTML = event.detail.chosenColor
+// };
