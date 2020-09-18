@@ -3,7 +3,7 @@ import { useColors, getAvailableColors } from "./ColorsProvider.js";
 const contentTarget = document.querySelector(".colorsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
 
-eventHub.addEventListener("colorStateChanged", event => {
+eventHub.addEventListener("colorSelect", event => {
     if (event.target.id === "colorSelect") {
         const customEvent = new CustomEvent  ("colorSelected", {
         detail: {
@@ -16,11 +16,11 @@ eventHub.addEventListener("colorStateChanged", event => {
 });
 
 
-const render = (colorCollection) => {
+const render = (colorList) => {
     contentTarget.innerHTML = `
        <select class="colorsDrop" id="colorSelect">
        <option value="0">Select a Color</option> 
-       ${colorCollection.map(colorObj => {
+       ${colorList.map(colorObj => {
             return `<option value="${colorObj.colorName}">${colorObj.colorName}</option>`
        }).join("")
     }

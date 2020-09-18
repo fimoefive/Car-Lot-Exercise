@@ -3,11 +3,13 @@ import { useCars, getCars } from "./CarsProvider.js";
 const contentTarget = document.querySelector(".carsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
 
-eventHub.addEventListener("carStateChanged", event => {
-    if (event.target.id === "carSelect") {
+eventHub.addEventListener("carSelect", changeEvent => {
+    if (changeEvent.target.id === "carSelect") {
+        const selectedCar = changeEvent.target.value
+
         const customEvent = new CustomEvent  ("carSelected", {
         detail: {
-            chosenCar: event.target.value
+                Car: selectedCar
             }
            
         })
@@ -19,8 +21,8 @@ eventHub.addEventListener("carStateChanged", event => {
 
 const render = (carCollection) => {
     contentTarget.innerHTML = `
-       <select class="carsDrop" id="colorSelect">
-       <option value="0">Select a Color</option> 
+       <select class="carsDrop" id="carSelect">
+       <option value="0">Select a Car</option> 
        ${carCollection.map(carObj => {
             return `<option value="${carObj.colorName}">${carObj.colorName}</option>`
        }).join("")
@@ -33,13 +35,13 @@ const render = (carCollection) => {
 export const CarSelect = () => {
     getCars()
     .then(() => { 
-        const carList = useCars()
-        render(carList)
+        const carCollection = useCars()
+        render(carCollection)
     })
 };
 
 const carsPreview = (event) => {
     const carsContentTarget = document.querySelector(".CarsPreview");
 
-    carsContentTarget.innerHTML = event.detail.chosenCar
+    carsContentTarget.innerHTML = changeEvent.detail.Car
 };
