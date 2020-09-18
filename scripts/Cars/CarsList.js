@@ -5,7 +5,7 @@ import { useCars, getCars } from "./CarsProvider.js";
 const eventHub = document.querySelector(".dropdownContainer");
 
 eventHub.addEventListener("colorChosen", event => {
-    const contentTarget = document.querySelector(".carsPreview");
+    
     if (event.detail.colorChosen !== "0") {
         const SelectedCar = useCars().fileter(singleCar => {
             return singleCar.colorId === parseInt(event.detail.colorChosen);
@@ -26,11 +26,12 @@ export const CarList = () => {
 };
 
 const render = (carArray) => {
-   
+    const contentTarget = document.querySelector(".mainContainer");
+
 let HTMLArray = carArray.map(singleCar => {
             return carHTML(singleCar);
        })
-       contentTarget.innerHTML = HTMLArray
+       contentTarget.innerHTML = HTMLArray .join("")
 };
    
 

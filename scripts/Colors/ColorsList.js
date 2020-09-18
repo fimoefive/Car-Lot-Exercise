@@ -1,9 +1,8 @@
 import { useColors, getAvailableColors } from "./ColorsProvider.js";
-import { colorName } from "./Colors.js";
 
 
 const eventHub = document.querySelector(".dropdownContainer");
-const contentTarget = document.querySelector(".colorsDrop");
+const contentTarget = document.querySelector(".filters__car");
 
 eventHub.addEventListener("change", event => {
 if (event.target.id === "colorSelect") {
@@ -28,7 +27,7 @@ const render = colorArray => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="colorSelect">
         <option value="0">Please select a color ...</option>
-        ${theColorsArray
+        ${colorArray
           .map(colorObj => {
             return `<option value="${colorObj.id}">${colorObj.color}</option>`;
           })

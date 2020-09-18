@@ -5,12 +5,12 @@ const availableColorsURL =
 let availableColors = [];
 
 export const useColors = () => {
-  // TODO
+
     return availableColors.slice();
 };
 
 export const getAvailableColors = () => {
-  // TODO
+
     return fetch(availableColorsURL)
       .then(response => response.json())
       .then(parsedAvailableColors => {
