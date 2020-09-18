@@ -1,4 +1,4 @@
-import { useColors, getAvalibleColors } from "./ColorsProvider.js";
+import { useColors, getAvailableColors } from "./ColorsProvider.js";
 
 const contentTarget = document.querySelector(".colorsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
@@ -30,7 +30,7 @@ const render = (colorCollection) => {
 
 
 export const ColorSelect = () => {
-    getAvalibleColors()
+    getAvailableColors()
     .then(() => {
         const colorList = useColors()
         render(colorList)

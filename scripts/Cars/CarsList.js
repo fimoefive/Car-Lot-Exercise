@@ -1,4 +1,4 @@
-import { useCars, getCars } from "./ColorsProvider.js";
+import { useCars, getCars } from "./CarsProvider.js";
 
 const contentTarget = document.querySelector(".carsDrop");
 const eventHub = document.querySelector(".dropdownContainer");
