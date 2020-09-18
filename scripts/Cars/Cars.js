@@ -1,6 +1,6 @@
-export const carName = (eateryObj) =>{
+export const carName = (carObj) =>{
     return ` 
     <section id="car-card"${carObj.id} class="car-card">
-    <h2>${carObj.businessName}</h2>
+    <h2>${carObj.carName}</h2>
     ` 
 };
