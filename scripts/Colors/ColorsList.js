@@ -1,6 +1,6 @@
 import { useColors, getAvalibleColors } from "./ColorsProvider.js";
 
-const contentTarget = document.querySelector("#main");
+const contentTarget = document.querySelector(".mainContainer");
 const eventHub = document.querySelector(".dropdownContainer");
 
 eventHub.addEventListener("colorStateChanged", event => {
@@ -8,12 +8,12 @@ eventHub.addEventListener("colorStateChanged", event => {
         const customEvent = new CustomEvent  ("colorSelected", {
         detail: {
             chosenColor: event.target.value
-            }
-           
+            } 
         })
          eventHub.dispatchEvent(customEvent)
          colorsPreview(customEvent)
-};
+    }
+});
 
 
 const render = (colorCollection) => {
@@ -31,13 +31,13 @@ const render = (colorCollection) => {
 
 export const ColorSelect = () => {
     getAvalibleColors()
-    .then(() =>{
+    .then(() => {
         const colorList = useColors()
         render(colorList)
     })
 };
 
-export const colorsPreview = (event) => {
+const colorsPreview = (event) => {
     const colorsContentTarget = document.querySelector(".ColorsPreview");
 
     colorsContentTarget.innerHTML = event.detail.chosenColor

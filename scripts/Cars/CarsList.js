@@ -1,6 +1,6 @@
 import { useCars, getCars } from "./ColorsProvider.js";
 
-const contentTarget = document.querySelector("#main");
+const contentTarget = document.querySelector(".mainContainer");
 const eventHub = document.querySelector(".dropdownContainer");
 
 eventHub.addEventListener("carStateChanged", event => {
@@ -13,7 +13,8 @@ eventHub.addEventListener("carStateChanged", event => {
         })
          eventHub.dispatchEvent(customEvent)
          carsPreview(customEvent)
-};
+    }
+});
 
 
 const render = (carCollection) => {
@@ -31,14 +32,14 @@ const render = (carCollection) => {
 
 export const CarSelect = () => {
     getCars()
-    .then(() =>{
+    .then(() => { 
         const carList = useCars()
         render(carList)
     })
 };
 
-export const carsPreview = (event) => {
+const carsPreview = (event) => {
     const carsContentTarget = document.querySelector(".CarsPreview");
 
     carsContentTarget.innerHTML = event.detail.chosenCar
-}
+};
