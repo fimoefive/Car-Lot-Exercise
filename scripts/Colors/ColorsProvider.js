@@ -13,7 +13,7 @@ export const getAvailableColors = () => {
 
     return fetch(availableColorsURL)
       .then(response => response.json())
-      .then(parsedAvailableColors => {
-        availableColors = parsedAvailableColors
+      .then(parsedColors => {
+        availableColors = parsedColors
       })
 };

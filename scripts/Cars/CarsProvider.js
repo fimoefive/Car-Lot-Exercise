@@ -4,12 +4,12 @@ const carsUrl =
 let cars = [];
 
 export const useCars = () => {
-  // TODO
+  
     return cars.slice();
 };
 
 export const getCars = () => {
-  // TODO
+  
   return fetch(carsUrl)
     .then(response => response.json())
     .then(parsedCars => {

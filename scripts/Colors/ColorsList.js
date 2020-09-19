@@ -1,18 +1,18 @@
 import { useColors, getAvailableColors } from "./ColorsProvider.js";
 
-
-const eventHub = document.querySelector(".dropdownContainer");
-const contentTarget = document.querySelector(".filters__car");
+const eventHub = document.querySelector("#main");
+const contentTarget = document.querySelector(".colorFilter");
 
 eventHub.addEventListener("change", event => {
 if (event.target.id === "colorSelect") {
-    const CustomEvent = new CustomEvent("colorChosen", {
+    const customEvent = new CustomEvent("colorChosen", {
         detail: {
-            colorChosen: event.target.value
+            chosenColor : parseInt(event.target.value),
+            chosenColorId: event.target.id
         }
     });
-    eventHub.dispatchEvent(CustomEvent);
-}
+    eventHub.dispatchEvent(customEvent);
+    }
 });
 
 export const ColorList = () => {
@@ -23,15 +23,15 @@ export const ColorList = () => {
     })
 };
 
-const render = colorArray => {
+const render = (colorArray) => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="colorSelect">
         <option value="0">Please select a color ...</option>
-        ${colorArray
-          .map(colorObj => {
-            return `<option value="${colorObj.id}">${colorObj.color}</option>`;
+
+        ${colorArray.map(colorObj => {
+            return `<option value="${colorObj.id}">${colorObj.color}</option>`
           })
-          .join("")}
+        }
     </select>
     `
 };

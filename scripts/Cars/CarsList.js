@@ -2,18 +2,16 @@ import { carHTML } from "./Cars.js";
 import { useCars, getCars } from "./CarsProvider.js";
 
 
-const eventHub = document.querySelector(".dropdownContainer");
+const eventHub = document.querySelector("#main");
 
 eventHub.addEventListener("colorChosen", event => {
     
     if (event.detail.colorChosen !== "0") {
-        const SelectedCar = useCars().fileter(singleCar => {
-            return singleCar.colorId === parseInt(event.detail.colorChosen);
+        const SelectedCar = useCars().filter(singleCar => {
+            return singleCar.colorId === event.detail.colorChosen;
         })
-        render(SelectedCar)
-        } else {
-         render(useCars());
-    }
+        render(SelectedCar);
+        } else render(useCars());
 });
 
 
@@ -26,12 +24,12 @@ export const CarList = () => {
 };
 
 const render = (carArray) => {
-    const contentTarget = document.querySelector(".mainContainer");
+    const contentTarget = document.querySelector(".carContainer");
 
 let HTMLArray = carArray.map(singleCar => {
             return carHTML(singleCar);
        })
-       contentTarget.innerHTML = HTMLArray .join("")
+       contentTarget.innerHTML = HTMLArray.join("")
 };
    
 
