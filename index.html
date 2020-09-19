@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Available Cars</title>
-    <link rel="stylesheet" href="./styles/main.css">
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Available Cars</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
 
-    <main class="mainContainer">
+<body>
+
+  <h1>Cars for Sale</h1>
+
+  <br>
+
+  <h3>Select a color to see what's available</h3>
+
+  <main class="mainContainer">
+
+    <div id="main"></div>
+      <div class="filters">
+        <div class="colorFilter"></div>
+      </div>
     
-      <section class="dropdownContainer">
-        <div class="carsDrop"></div>
-        <div class="colorsDrop"></div>
+
+      <section class="carContainer">
+        <section id="carCard" >
+          <div class="car-card"></div>
+        </section>
       </section>
 
-      <div id="main">
-        <div class="filters">
-          <div class="colorFilter"></div>
-        </div>
 
-        <section class="carContainer">
-          <section class="carCard">
-          </section>
-        </section>
-  
+      <!-- <section class="dropdownContainer">
+        <div class="carsDrop"></div>
+        <div class="colorsDrop"></div>
+      </section> -->
 
 
-    <section class="previewContainer"></section>
-    <h1>Cars for Sale</h1>
-    <section class="filters__car"></section>
-    <h3>Select a color to see what's available</h3>
-    <section class=".colorFilter"></section>
+      <!-- <section class="filters__car"></section> -->
 
-    <section class="car-container"></section>
-    <!-- <div class="CarsPreview"><button>Car Preview</button></div> -->
+      <!-- <section class=".colorFilter"></section> -->
 
-    
-    <div class="ColorsPreview"><button>Color Preview</button></div>
-  </section>
-    
+      <!-- <section class="car-container"></section> -->
+      <!-- <div class="CarsPreview"><button>Car Preview</button></div> -->
 
-</main>
+      <div class="ColorsPreview"><button>Color Preview</button></div>
+      </section>
 
-  </body>
-  <script src="scripts/main.js" type="module"></script>
+  </main>
+
+</body>
+<script src="scripts/main.js" type="module"></script>
+
 </html>

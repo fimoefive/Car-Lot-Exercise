@@ -10,7 +10,7 @@ if (event.target.id === "colorSelect") {
             chosenColor : parseInt(event.target.value),
             chosenColorId: event.target.id
         }
-    });
+    })
     eventHub.dispatchEvent(customEvent);
     }
 });
@@ -18,8 +18,8 @@ if (event.target.id === "colorSelect") {
 export const ColorList = () => {
     getAvailableColors()
     .then(() => {
-        const colorList = useColors()
-        render(colorList)
+        const arrayOfColors = useColors()
+        render(arrayOfColors)
     })
 };
 

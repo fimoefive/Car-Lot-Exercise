@@ -10,10 +10,10 @@ eventHub.addEventListener("colorChosen", event => {
         const SelectedCar = useCars().filter(singleCar => {
             return singleCar.colorId === event.detail.colorChosen;
         })
-        render(SelectedCar);
-        } else render(useCars());
+        render(SelectedCar)
+        } 
+        else render(useCars())
 });
-
 
 export const CarList = () => {
     getCars()
@@ -24,18 +24,13 @@ export const CarList = () => {
 };
 
 const render = (carArray) => {
-    const contentTarget = document.querySelector(".carContainer");
+const contentTarget = document.querySelector(".carContainer");
 
 let HTMLArray = carArray.map(singleCar => {
             return carHTML(singleCar);
        })
-       contentTarget.innerHTML = HTMLArray.join("")
+       contentTarget.innerHTML = HTMLArray.join("");
 };
-   
-
-
-
-
 
 // const carsPreview = (changeEvent) => {
 //     const carsContentTarget = document.querySelector(".CarsPreview");

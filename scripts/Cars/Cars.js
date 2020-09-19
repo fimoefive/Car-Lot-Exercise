@@ -3,6 +3,7 @@ export const carHTML = (carObj) => {
     <section id="carCard"${carObj.id} class="car-card">
     <h2>Name:${carObj.name}</h2>
     <p>Year: ${carObj.year}</p>
+    <p>MPG ${carObj.milesPerGallon}</p>
     </section>
     ` 
 };
