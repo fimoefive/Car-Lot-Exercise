@@ -6,26 +6,6 @@ select {
     font-size: 14px;
     line-height: 1.5;
 }
-.body {
-    background-color: rgba(254, 255, 254, 0.925);
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Patua One", serif;
-    letter-spacing: 2px;
-}
-.criminalsContainer {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-}
-.criminalsList {
-    flex: 33%;
-}
 .color-card {
     background-color: rgb(227, 240, 226);
     margin: 1em;
@@ -41,13 +21,11 @@ h6 {
     border: 2px dotted black;
 }
 */
-
-
 body {
-    background-color: rgb(220, 255, 255);
+    background-color: rgb(49, 231, 231);
 }
 
-.car-container {
+.carcontainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -55,7 +33,7 @@ body {
     margin: 0;
 }
 
-.card-car {
+.cardcar {
     border: solid 1px rgb(5, 4, 5);
     margin: 1em;
     min-width: 300px;
