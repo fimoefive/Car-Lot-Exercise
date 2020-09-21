@@ -8,7 +8,7 @@ eventHub.addEventListener("change", event => {
     const customEvent = new CustomEvent("colorChosen", {
         detail: {
             colorThatWasChosen: event.target.value,
-            chosenColorId: event.target.id
+            chosenColorId: parseInt(event.target.id)
         }
     })
     eventHub.dispatchEvent(customEvent);
