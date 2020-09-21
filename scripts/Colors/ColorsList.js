@@ -12,6 +12,7 @@ if (event.target.id === "colorSelect") {
         }
     })
     eventHub.dispatchEvent(customEvent);
+    //          colorsPreview(customEvent)
     }
 });
 
@@ -31,24 +32,10 @@ const render = (colorArray) => {
         ${colorArray.map(colorObj => {
             return `<option value="${colorObj.id}">${colorObj.color}</option>`
           })
-        }
+        .join("")}
     </select>
     `
 };
-
-// eventHub.addEventListener("colorSelect", event => {
-//     if (event.target.id === "colorSelect") {
-//         const customEvent = new CustomEvent  ("colorSelected", {
-//         detail: {
-//             chosenColor: event.target.value
-//             } 
-//         })
-//          eventHub.dispatchEvent(customEvent)
-//          colorsPreview(customEvent)
-//     }
-// });
-
-
 
 // const render = (colorList) => {
    
@@ -57,8 +44,6 @@ const render = (colorArray) => {
 //        })
 //        contentTarget.innerHTML= HTMLArray.join("")
 // };
-
-
 
 
 // const colorsPreview = (event) => {

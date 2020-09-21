@@ -29,7 +29,8 @@ const contentTarget = document.querySelector(".carContainer");
 let HTMLArray = carArray.map(singleCar => {
             return carHTML(singleCar);
        })
-       contentTarget.innerHTML = HTMLArray.join("");
+       .join("")
+       contentTarget.innerHTML = HTMLArray;
 };
 
 // const carsPreview = (changeEvent) => {

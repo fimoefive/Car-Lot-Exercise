@@ -8,48 +8,37 @@
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 
-<body>
+<body class="container">
+
+  <div id="main"></div>
 
   <h1>Cars for Sale</h1>
-
   <br>
-
-  <h3>Select a color to see what's available</h3>
+  <h2>Select a color to see what's available</h2>
 
   <main class="mainContainer">
 
-    <div id="main"></div>
-      <div class="filters">
-        <div class="colorFilter"></div>
-      </div>
-    
+      <section class="colorFilter"></section>
 
-      <section class="carContainer">
+      <section class="carContainer"></section>
+      <!-- <section class="filters__car"></section> -->
+
         <section id="carCard" >
           <div class="car-card"></div>
         </section>
-      </section>
+      
+      </main>
 
+      <div class="ColorsPreview"><button>Color Preview</button></div>
+      </section>
 
       <!-- <section class="dropdownContainer">
         <div class="carsDrop"></div>
         <div class="colorsDrop"></div>
       </section> -->
-
-
-      <!-- <section class="filters__car"></section> -->
-
-      <!-- <section class=".colorFilter"></section> -->
-
-      <!-- <section class="car-container"></section> -->
       <!-- <div class="CarsPreview"><button>Car Preview</button></div> -->
 
-      <div class="ColorsPreview"><button>Color Preview</button></div>
-      </section>
+  </body>
 
-  </main>
-
-</body>
 <script src="scripts/main.js" type="module"></script>
-
 </html>
